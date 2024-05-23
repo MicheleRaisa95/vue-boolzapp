@@ -210,6 +210,7 @@ header i {
     background-color: var(--chat-bg);
     border-radius: 5%;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .sent p {
@@ -359,6 +360,8 @@ header i {
          font-size: 12px;
      }
 }
+
+
 
 
 
