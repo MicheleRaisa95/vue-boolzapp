@@ -165,9 +165,17 @@ const { createApp } = Vue
                     }
                 ],
             }
-        ]
+        ],
+        // contatto attualmente selezionato
+        selectContact: null
         
-      }
+      };
+    },
+    // metodo per impostare il contatto
+    methods: {
+       setSelectContact(contact) {
+            this.selectContact = contact;
+        }
     }
   }).mount('#app')
 
