@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- /css -->
+    <!-- FONT AWSOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <div class="sidebar">
+            <header>
+                <div class="profilo">
+                    <figure>
+                        <img src="./img/avatar_io.jpg" alt="avatar_1">
+                    </figure>
+                </div>
+                <div class="icone">
+                        <span>
+                            <i class="fa-solid fa-spinner"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-message"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </span>
+                </div>
+            </header>
+            <!-- sidebar -->
+            <div class="notification">
+            <div class="flex">
+                <div class="flex align-items-center margin-y10">
+                    <div>
+                        <span class="slash-bell padding-x10">
+                            <i class="fa-regular fa-bell-slash"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div>
+                        Ricevi notifiche di nuovi messaggi
+                    </div>
+                    <div>
+                        <a id="notifiche-desktop" href="#">
+                            attiva notifiche desktop
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass relative"></i>
+            <input type="text" placeholder="cerca o inizia una nuova chat">
+            </div>
+            <ul class="chats">
+                <!-- uso v-for per visalizzare nomi e foto -->
+                <li v-for="contact in contacts" :key="contact.name" @click="setSelectContact(contact)">
+                    <div class="profilo">
+                        <div class="flex align-items-center">
+                        <figure>
+                            <img :src="contact.avatar" :alt="contact.name">
+                        </figure>
+                        <div class="profile-name profilo-none profilo-none">
+                            <div class="flex justify-content">
+                                <div>{{ contact.name }}</div>
+                            <div class="watch">10.15</div>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_2.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        <div class="flex justify-content">
+                            <div>Fabio</div>
+                        <div class="watch">10.15</div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_3.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        <div class="flex justify-content">
+                            <div>Samuele</div>
+                        <div class="watch">10.15</div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_4.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        <div class="flex justify-content">
+                            <div>Alessandro B.</div>
+                        <div class="watch">10.15</div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_5.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        <div class="flex justify-content">
+                            <div>Alessanfdro L.</div>
+                        <div class="watch">10.15</div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_6.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        <div class="flex justify-content">
+                            <div>Claudia</div>
+                        <div class="watch">10.15</div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_7.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        <div class="flex justify-content">
+                            <div>Michele</div>
+                        <div class="watch">10.15</div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_8.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        Davide
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_3.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        Michele
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_4.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        Michele
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_1.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        Michele
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_2.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        Michele
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+                <li>
+                    <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure>
+                        <img src="./img/avatar_6.jpg" alt="avatar_1">
+                    </figure>
+                    <div class="profile-name profilo-none">
+                        Michele
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </li>
+            </ul>
+            <!-- /sidebar -->
+        </div>
+        <div class="content">
+            <!-- selezione dellachat -->
+            <header class="border-left">
+                <div class="profilo">
+                <div class="flex align-items-center">
+                    <figure v-if="selectContact">
+                        <img :src="selectContact.avatar" :alt="selectContact.name">
+                    </figure>
+                    
+                    <div class="profile-name">
+                        {{selectContact ? selectContact.name : ''}}
+                        <p>
+                            Ultimo accesso oggi alle 16.26
+                        </p>
+                    </div>
+                </div>
+                </div>
+                <div class="icone-content">
+                        <span>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-paperclip"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </span>
+                </div>
+            </header>
+            <!-- /visualizzo la conversazione -->
+            <div class="conversation">
+    
+                <div v-for="message in selectContact ? selectContact.messages : []" :key="message.date" :class="['flex-column', message.status === 'sent' ? 'flex-end px-right' : 'flex-start px-left']" >
+                    <div :class="['message', message.status, message.status === 'received' ? 'ricevuti' : '']">
+                        <p>
+                            {{ message.message }}
+                            <span class="chev"><i class="fas fa-chevron-down"></i></span>
+                            <span>{{ message.date }}</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-column flex-start px-left">
+                    <div class="ricevuti">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas voluptatum soluta fugit eum voluptas iste officiis corporis corrupti perspiciatis? Repudiandae esse voluptatem pariatur commodi nostrum soluta libero numquam maiores? <span  class="chev"><i class="fas fa-chevron-down"></i></span>
+                            <span>10:30 AM</span>
+                        </p> 
+                </div>
+            </div>
+        </div>
+        <!-- visualizzo la conversazione -->
+        <!-- footer -->
+        <footer class="message">
+            <i class="fa-regular fa-face-smile"></i>  
+            <input v-model="newMessage" @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio">
+            <i class="fa-solid fa-microphone"></i>
+        </footer>
+    </div>
+    </div>
+    </div>
+</div>
+
+<!-- LUXON -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.4/luxon.min.js" integrity="sha512-dUlSLLkxslGILhPdCkALwk4szPhp3xmZIKFtlUD+O9Lslq41Aksmdt5OGqpomDoT4FsCUH70jQU8ezZHI3v1RQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- LUXON -->
+
+<!-- VUE.JS -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<!-- /VUE.JS -->
+
+
+
+<!-- JS -->
+<script src="./main/main.js"></script>
+<!-- /JS -->
+</body>
+</html>
