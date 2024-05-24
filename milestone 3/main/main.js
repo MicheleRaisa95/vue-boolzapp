@@ -201,7 +201,18 @@ const { createApp } = Vue
 
             this.selectContact.messages.push(oggettoNuovoMessaggio);
             // pulizia campo di imput
-            this.newMessage = ''
+            this.newMessage = '';
+
+            // imposto risposta automatica
+            setTimeout(() => {
+                const rispostaAutomatica = {
+                    date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
+                    message: 'ok',
+                    status: 'received'
+                };
+                // aggiungo la risposta automatica all'arrey
+                this.selectContact.messages.push(rispostaAutomatica);
+            },1000);
         }
 
     }
