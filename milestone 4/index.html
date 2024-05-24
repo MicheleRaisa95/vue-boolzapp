@@ -56,11 +56,11 @@
             </div>
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass relative"></i>
-            <input type="text" placeholder="cerca o inizia una nuova chat">
+            <input v-model="searchChat" type="text" placeholder="cerca o inizia una nuova chat">
             </div>
             <ul class="chats">
                 <!-- uso v-for per visalizzare nomi e foto -->
-                <li v-for="contact in contacts" :key="contact.name" @click="setSelectContact(contact)">
+                <li v-for="contact in filteredContacts" :key="contact.name" @click="setSelectContact(contact)">
                     <div class="profilo">
                         <div class="flex align-items-center">
                         <figure>
