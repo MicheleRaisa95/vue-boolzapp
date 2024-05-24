@@ -6,7 +6,7 @@ const { createApp } = Vue
         contacts: [
             {
                 name: 'Michele',
-                avatar: './img/avatar_1.jpg',
+                avatar: './img/avatar_1.png',
                 visible: true,
                 messages: [
                     {
@@ -165,9 +165,17 @@ const { createApp } = Vue
                     }
                 ],
             }
-        ]
+        ],
+        // contatto attualmente selezionato
+        selectContact: null
         
-      }
+      };
+    },
+    // metodo per impostare il contatto
+    methods: {
+       setSelectContact(contact) {
+            this.selectContact = contact;
+        }
     }
   }).mount('#app')
 
