@@ -1,4 +1,10 @@
+// Luxon
+const { DateTime } = luxon;
+// Luxon
+
+// Vue
 const { createApp } = Vue
+// Vue
 
   createApp({
     data() {
@@ -167,15 +173,37 @@ const { createApp } = Vue
             }
         ],
         // contatto attualmente selezionato
-        selectContact: null
+        selectContact: null,
+
+        newMessage: ''
         
-      };
+    };
     },
     // metodo per impostare il contatto
     methods: {
-       setSelectContact(contact) {
+    setSelectContact(contact) {
             this.selectContact = contact;
+        },
+
+        // metodo per inviare i messaggi
+        sendMessage() {
+            console.log('metodo sendMessage chiamato');
+            if (this.newMessage.trim() === '') {
+                console.log('messaggio non inviato');
+                return;
+            }
+
+            const oggettoNuovoMessaggio = {
+                date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
+                message: this.newMessage.trim(),
+                status: 'sent'
+            };
+
+            this.selectContact.messages.push(oggettoNuovoMessaggio);
+            // pulizia campo di imput
+            this.newMessage = ''
         }
+
     }
-  }).mount('#app')
+}).mount('#app')
 

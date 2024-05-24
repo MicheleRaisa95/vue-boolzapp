@@ -308,6 +308,7 @@
                         </span>
                 </div>
             </header>
+            <!-- /visualizzo la conversazione -->
             <div class="conversation">
     
                 <div v-for="message in selectContact ? selectContact.messages : []" :key="message.date" :class="['flex-column', message.status === 'sent' ? 'flex-end px-right' : 'flex-start px-left']" >
@@ -318,7 +319,6 @@
                             <span>{{ message.date }}</span>
                         </p>
                     </div>
-                   
                 </div>
                 <div class="flex-column flex-start px-left">
                     <div class="ricevuti">
@@ -329,10 +329,11 @@
                 </div>
             </div>
         </div>
+        <!-- visualizzo la conversazione -->
         <!-- footer -->
         <footer class="message">
             <i class="fa-regular fa-face-smile"></i>  
-            <input type="text" placeholder="Scrivi un messaggio">
+            <input v-model="newMessage" @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio">
             <i class="fa-solid fa-microphone"></i>
         </footer>
     </div>
@@ -340,9 +341,15 @@
     </div>
 </div>
 
+<!-- LUXON -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.4/luxon.min.js" integrity="sha512-dUlSLLkxslGILhPdCkALwk4szPhp3xmZIKFtlUD+O9Lslq41Aksmdt5OGqpomDoT4FsCUH70jQU8ezZHI3v1RQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- LUXON -->
+
 <!-- VUE.JS -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <!-- /VUE.JS -->
+
+
 
 <!-- JS -->
 <script src="./main/main.js"></script>
