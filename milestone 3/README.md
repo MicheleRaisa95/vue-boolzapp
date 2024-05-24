@@ -18,4 +18,24 @@ Click sul contatto mostra la conversazione del contatto cliccato
 - usare v-for per iterare sui messaggi e mostrarli
 - aggiungere un controllo per quando nessun contato viene selezionato?
 
+Milestone 3
+Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+
+1. Gestione invio dei messaggi:
+
+- aggiungo un metodo per gestire l'invio del messaggio 
+- recupero il testo dal campo di imput
+- creo un nuovo messaggio con la data corrente e che risulti inviato
+-aggiungo il messasggio all'array messages del contatto selezionato
+-pulisco il campo di input
+
+2. Risposta automatica:
+
+- Dopo ivio mesaggio uso un timeout per simulare una risposta 
+- creo un nuovo messaggio con il testo ok
+- aggiungo il messaggio all'array del contatto 
+
+
 
