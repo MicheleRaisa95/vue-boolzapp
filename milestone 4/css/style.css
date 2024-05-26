@@ -18,22 +18,29 @@ ul {
 /*COMMON*/
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
+    flex-direction: column;
 }
 
 .container {
     display: flex;
     background-color: lightblue;
     width: 100%;
+    height: 90%;
+    margin: auto;
+    padding: 0;
 }
 /*LAYOUT*/
 .sidebar {
     display: none;
-    background-color: chartreuse;
+    background-color: white;
+
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
 }
@@ -49,8 +56,9 @@ header {
 }
 
 .conversation {
-    height: calc(100% - 140px);
+    height: calc(100vh - 140px);
     overflow-y: scroll;
+    flex-grow: 1;
 }
 
 footer.message {
@@ -154,12 +162,13 @@ header i {
 }
 
 .px-right {
-    padding-right: 70px;
-    margin: 70px 0;
+    padding-right: 20px;
+    margin: 10px 0;
 }
 
 .px-left {
-    padding-left: 70px;
+    padding-left: 20px;
+    margin: 10px 0;
 }
 
 .border-left {
@@ -198,7 +207,7 @@ header i {
 /*conversation*/
 
 .sent {
-    max-width: 50%;
+    max-width: 70%;
     background-color: var(--mex-sent);
     border-radius: 5%;
     padding: 10px;
@@ -206,7 +215,7 @@ header i {
 }
 
 .ricevuti {
-    max-width: 50%;
+    max-width: 70%;
     background-color: var(--chat-bg);
     border-radius: 5%;
     padding: 10px;
@@ -308,57 +317,57 @@ header i {
 
     .notification {
         display: block;
-         background-color: var(--notification-bg);
-     }
- 
-     .search {
-        display: block;
-         background-color: var(--search-bg);
-         padding: 0 30px 20px;
-     }
+        background-color: var(--notification-bg);
+    }
 
-     .icone {
+    .search {
+        display: block;
+        background-color: var(--search-bg);
+        padding: 0 30px 20px;
+    }
+
+    .icone {
         display: block;
         color: var(--icone-header);
-     }
-     .slash-bell i {
+    }
+    .slash-bell i {
         background-color: #ffffff;
         color: var(--notification-bg);
         border-radius: 50%;
         padding: 15px;
         
-     }
+    }
 
-     #notifiche-desktop {
+    #notifiche-desktop {
         color: #5a7d88;
-     }
-     
-     #conversazione {
+    }
+    
+    #conversazione {
         flex: 1 1 auto;
         width: 100%;
-     }
+    }
 
-     .new-chat {
+    .new-chat {
         background-color: var(--color-gray);
-     }
+    }
 
-     .profilo-none {
+    .profilo-none {
         display: block;
-     }
+    }
 
-     .profilo {
+    .profilo {
         border-bottom: 1px solid  #d6d6d6;
-     }
+    }
 
-     .profile-name p {
+    .profile-name p {
         font-size: 10px;
         color: var(--icone-header);
-     }
+    }
 
-     .watch {
-         color: var(--icone-header);
-         font-size: 12px;
-     }
+    .watch {
+        color: var(--icone-header);
+        font-size: 12px;
+    }
 }
 
 
